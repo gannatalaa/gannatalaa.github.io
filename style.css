@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gannat Alaa Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* === General Body Styles === */
+body {
+  margin: 0;
+  padding-top: 80px; /* Leave space for the fixed navbar */
+  background-color: #0d1117;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #c9d1d9;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* === Navbar Styles === */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0 20px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(22, 27, 34, 0.85);
+  border-bottom: 1px solid #30363d;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: top 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+}
+
+.navbar .menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.navbar a {
+  color: #c9d1d9;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #58a6ff;
+}
+
+/* === Hamburger Menu Functionality === */
+.menu-toggle, .menu-icon {
+  display: none;
+}
+
+/* === Photo & Header === */
+#my-photo {
+  width: 220px;
+  height: auto;
+  border: 4px solid #58a6ff;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  margin: 0 auto 20px auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+#my-photo:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #58a6ff;
+  margin-bottom: 10px;
+}
+
+header p {
+  text-align: center;
+  font-size: 18px;
+  color: #8b949e;
+}
+
+/* === Section Styles === */
+section {
+  background-color: #161b22;
+  border-radius: 16px;
+  padding: 25px 30px;
+  margin-bottom: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  font-size: 24px;
+  color: #58a6ff;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #30363d;
+  padding-bottom: 8px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #1f6feb;
+}
+
+.contact-list i {
+  margin-right: 8px;
+  color: #58a6ff;
+}
+
+/* === CV Button === */
+.downloads {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #238636;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2ea043;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* === Testimonial Styles === */
+.testimonial {
+  background-color: #0d1117;
+  border-left: 4px solid #58a6ff;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-style: italic;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 0 8px 8px 0;
+}
+
+.testimonial h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-style: normal;
+  color: #8b949e;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-end;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #c9d1d9;
+    padding: 10px;
+  }
+
+  .navbar .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(22, 27, 34, 0.95);
+    border-top: 1px solid #30363d;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+  }
+
+  .navbar .menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar .menu a {
+    display: block;
+    padding: 15px 0;
+  }
+
+  .menu-toggle:checked ~ .menu {
+    max-height: 400px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  #my-photo {
+    width: 180px;
+  }
+
+  section {
+    padding: 20px 15px;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+  <img src="gannat.jpeg" id="my-photo" alt="Gannat Alaa">
+  <h1>Gannat Alaa</h1>
+  <p>Machine Learning Engineer</p>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    Motivated Computer Science student specializing in Machine Learning and AI.
+    Passionate about solving real-world problems using data.
+  </p>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <p>
+    Bachelor of Science in Computer Science<br>
+    Faculty of Science, Tanta University
+  </p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <ul>
+    <li>Python</li>
+    <li>Data Analysis</li>
+    <li>Machine Learning</li>
+    <li>SQL</li>
+    <li>Pandas</li>
+    <li>NumPy</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <ul>
+    <li><a href="https://github.com/deepnex20-ops/hospital-readmissions">Hospital Readmissions Prediction</a></li>
+    <li><a href="https://github.com/deepnex20-ops/ai-breakup-assistant">AI Breakup Recovery Assistant</a></li>
+  </ul>
+</section>
+
+<section class="contact">
+  <h2>Contact</h2>
+  <p>
+    <a href="mailto:gannatalaa72@gmail.com">Email</a> |
+    <a href="https://github.com/deepnex20-ops">GitHub</a>
+  </p>
+  <div class="downloads">
+    <a href="Gannat_Alaa_ML_CV.pdf" class="btn" target="_blank">CV</a>
+  </div>
+</section>
+
+</body>
+</html>
