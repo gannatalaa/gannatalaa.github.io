@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gannat Alaa Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0b1120, #020617);
+      --card: #111827;
+      --card-hover: #1f2937;
+      --primary: #6366f1;
+      --secondary: #22d3ee;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-main);
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+      margin: 0 auto 20px auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      display: block;
+    }
+
+    header h1 {
+      font-size: 48px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .typing {
+      border-right: 3px solid var(--secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      width: fit-content;
+      margin: auto;
+      animation: typing 3s steps(30), blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0 }
+      to { opacity: 1 }
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      background: var(--card-hover);
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .skill {
+      background: var(--card);
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
+
+    .skill:hover {
+      background: var(--card-hover);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 15px;
+      transition: 0.3s ease;
+    }
+
+    .project:hover {
+      background: var(--card-hover);
+    }
+
+    .project p {
+      color: var(--text-muted);
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="gannat.jpeg" class="avatar" alt="Gannat Alaa">
+  <h1>Gannat Alaa</h1>
+  <p class="typing">Machine Learning Engineer</p>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      Motivated Computer Science student specializing in Machine Learning and AI.
+      Passionate about solving real-world problems using data.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="card">
+    <p>
+      Bachelor of Science in Computer Science<br>
+      Faculty of Science, Tanta University
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">Python</div>
+    <div class="skill">Data Analysis</div>
+    <div class="skill">Machine Learning</div>
+    <div class="skill">SQL</div>
+    <div class="skill">Pandas</div>
+    <div class="skill">NumPy</div>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <div class="project">
+      <h3>Hospital Readmissions Prediction</h3>
+      <p>Machine learning project predicting patient readmission risk.</p>
+      <a href="https://github.com/deepnex20-ops/hospital-readmissions" class="btn">View Project</a>
+    </div>
+
+    <div class="project">
+      <h3>AI Breakup Recovery Assistant</h3>
+      <p>NLP system that analyzes emotions.</p>
+      <a href="https://github.com/deepnex20-ops/ai-breakup-assistant" class="btn">View Project</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Contact</h2>
+  <p>
+    <a href="mailto:gannatalaa72@gmail.com">Email</a> |
+    <a href="https://github.com/deepnex20-ops">GitHub</a>
+  </p>
+</section>
+
+<footer>
+  <p>Gannat Alaa</p>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
